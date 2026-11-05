@@ -24,9 +24,7 @@ export function Header() {
 
                {/* Logo / Nome da Empresa */}
         <div className="flex items-center gap-3">
-          <div className="bg-wc-cyan p-2 rounded-lg text-wc-navy font-black text-xl tracking-wider">
-            WC
-          </div>
+         
           <div>
             <span className="text-white font-bold text-lg block leading-tight">WC REFRIGERAÇÃO</span>
             <span className="text-wc-cyan text-xs tracking-widest uppercase">E Climatização</span>

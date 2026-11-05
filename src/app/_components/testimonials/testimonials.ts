@@ -1,9 +1,9 @@
 import { StaticImageData } from "next/image"
-import avatar1 from "../../../../public/avatar1.jpg"
-import avatar2 from "../../../../public/avatar2.jpg"
-import avatar3 from "../../../../public/avatar5.jpg"
-import avatar4 from "../../../../public/avatar4.jpg"
-import avatar5 from "../../../../public/avatar5.jpg"
+//import avatar1 from "../../../../public/avatar1.jpg"
+//import avatar2 from "../../../../public/avatar2.jpg"
+//import avatar3 from "../../../../public/avatar5.jpg"
+//import avatar4 from "../../../../public/avatar4.jpg"
+//import avatar5 from "../../../../public/avatar5.jpg"
 
 
 export interface Testimonial{

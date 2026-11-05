@@ -1,12 +1,12 @@
-import instalacaoImg from "../../../../public/instalacao.jpg";
+//import instalacaoImg from "../../../../public/instalacao.jpeg";
 import desinstalacaoImg from "../../../../public/desinstalacao.jpg";
-import preventivaImg from "../../../../public/manutencao-preventiva.jpg";
-import corretivaImg from "../../../../public/manutencao-corretiva.jpg";
-import higienizacaoImg from "../../../../public/higienizacao-completa.jpg";
-import higienizacaoBolsaImg from "../../../../public/higienizacao-bolsa.jpg";
+import preventivaImg from "../../../../public/preventiva.jpeg";
+import corretivaImg from "../../../../public/corretiva.jpeg";
+import higienizacaoImg from "../../../../public/higienizacao.jpeg";
+import higienizacaoBolsaImg from "../../../../public/higienizacaoBolsa.jpeg";
 import vendaImg from "../../../../public/venda.jpg";
-import projetoImg from "../../../../public/projeto.jpg";
-import infraestruturaImg from "../../../../public/infraestrutura.jpg";
+import projetoImg from "../../../../public/projeto.jpeg";
+import infraestruturaImg from "../../../../public/infra.jpeg";
 
 import {
     AirVent,
@@ -25,7 +25,7 @@ export const services = [
         id: 1,
         title: "Instalação",
         description: "Instalação segura e técnica de equipamentos Split, Cassete e Piso-Teto, com teste de estanqueidade, procedimento de vácuo e testes finais de funcionamento.",
-        image: instalacaoImg,
+        image: "/instalacao.jpeg",
         button: "Solicitar Orçamento",
         icon: AirVent,
         whatsappMessage: "Olá! Gostaria de um orçamento para instalação de ar-condicionado.",
