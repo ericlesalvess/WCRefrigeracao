@@ -30,7 +30,7 @@ const highlights = [
 
 export function Hero() {
         return (
-                <section id="inicio" className="relative overflow-hidden bg-gradient-to-br from-white via-ice-50 to-cyan-50 pt-28 pb-16 lg:pt-36">
+                <section id="inicio" className="relative overflow-hidden bg-gradient-to-br from-white via-ice-50 to-cyan-50 pt-28 pb-16 sm:pt-20 lg:pt-36">
                         {/* manchas de cor ao fundo */}
                         <div className="absolute -top-32 -right-32 h-[380px] w-[380px] rounded-full bg-cyan-200/40 blur-3xl" />
                         <div className="absolute -bottom-32 -left-32 h-[290px] w-[290px] rounded-full bg-blue-200/30 blur-3xl" />
