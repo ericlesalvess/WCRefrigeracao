@@ -12,7 +12,7 @@ const differentials = [
     "Teste de estanqueidade e procedimento de vácuo",
     "Testes finais de funcionamento antes da entrega",
     "Do planejamento à entrega, com garantia",
-    "Atendimento em Valença e região",
+    "Atendimento na cidade de Valença e região",
 ];
 
 export function About() {
