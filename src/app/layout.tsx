@@ -1,23 +1,35 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
+import { JsonLd } from "./_components/JsonLd";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const jakarta = Plus_Jakarta_Sans({
+  variable: "--font-sans",
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "WC Refrigeração| Instalação e Manutenção de Ar-Condicionado",
-  description: "O Ambiente perfeito em qualquer estação.",
-  icons:{
-    icon: "/logo1.png",
+  metadataBase: new URL("https://SEU-DOMINIO.com.br"),
+  title: {
+    default: "WC Refrigeração | Instalação e Manutenção de Ar-Condicionado em Valença",
+    template: "%s | WC Refrigeração",
   },
+  description:
+    "Instalação, manutenção e higienização de ar-condicionado em Valença e região. Visita técnica e orçamento, com testes e garantia.",
+  alternates: { canonical: "/" },
+  icons: {
+    icon: "/logo.png",
+  },
+  openGraph: {
+    title: "WC Refrigeração e Climatização",
+    description:
+      "Instalação, manutenção e higienização de ar-condicionado em Valença e região.",
+    siteName: "WC Refrigeração e Climatização",
+    url: "/",
+    locale: "pt_BR",
+    type: "website",
+  },
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({
@@ -26,11 +38,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="pt-BR" className={`${jakarta.variable} h-full antialiased`}>
+      <body className="flex min-h-full flex-col font-sans">
+        <JsonLd />
+        {children}
+      </body>
     </html>
   );
 }

@@ -1,83 +1,125 @@
 'use client'
 import { staggerContainer, fadeUp } from "@/animations"
-import { WhatsappLogoIcon } from '@phosphor-icons/react/dist/ssr'
-import {motion} from "motion/react"
-import {MapCard} from "./MapCard"
+import {
+    WhatsappLogoIcon,
+    PhoneIcon,
+    MapPinIcon,
+    ClipboardTextIcon,
+    FileTextIcon,
+    ShieldCheckIcon,
+} from "@phosphor-icons/react"
+import { motion } from "motion/react"
+import { MapCard } from "./MapCard"
 
+const WHATSAPP_URL =
+    "https://wa.me/5524992764964?text=" +
+    encodeURIComponent("Olá! Gostaria de agendar uma visita para fazer um orçamento de ar-condicionado.")
 
+const steps = [
+    { icon: ClipboardTextIcon, title: "Visita técnica", text: "Avaliamos o ambiente no local." },
+    { icon: FileTextIcon, title: "Orçamento", text: "Modelo ideal, quantidade de aparelhos e valor." },
+    { icon: ShieldCheckIcon, title: "Instalação com garantia", text: "Testes finais antes da entrega." },
+]
 
-export function Cta(){
+const contacts = [
+    { icon: PhoneIcon, label: "(24) 99276-4964", href: "tel:+5524992764964" },
+    { icon: MapPinIcon, label: "Atendimento em Valença e região" },
+]
 
-    return(
+export function Cta() {
+    return (
+        <section id="contato" className="relative scroll-mt-15 overflow-hidden bg-gradient-to-br from-navy-950 via-navy-900 to-navy-800 py-16 lg:py-20" >
+            {/* mancha de cor ao fundo */}
+            <div aria-hidden className="pointer-events-none absolute -top-40 -left-40 h-[380px] w-[380px] rounded-full bg-cyan-500/10 blur-3xl" />
 
-    <section id="contato" className=" scroll-mt-15  py-15 bg-gradient-to-r from-emerald-700 via-emerald-600 to-emerald-800">
-        <div className="container mx-auto px-4">
+            <div className="relative mx-auto w-full max-w-6xl px-4">
                 <motion.div
-                variants={staggerContainer}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{once:true, amount:0.2}}
+                    variants={staggerContainer}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.2 }}
                 >
-                    <div className="grid lg:grid-cols-2 gap-16 items-center">
+                    <div className="grid items-center gap-12 lg:grid-cols-2">
+
                         {/* TEXTO */}
-                        
-                            <div>
+                        <div>
+                            <motion.span
+                                variants={fadeUp}
+                                className="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-300"
+                            >
+                                Agende uma visita
+                            </motion.span>
 
-                                        <motion.span
-                                        variants={fadeUp}
-                                        className=" text-3xl uppercase tracking-[0.3em] font-semibold text-emerald-100"
-                                        >
-                                            Agende uma Visita
+                            <motion.h2
+                                variants={fadeUp}
+                                className="mt-4 text-3xl font-bold leading-tight text-white md:text-4xl"
+                            >
+                                Deixe seu conforto em nossas mãos
+                            </motion.h2>
 
-                                        </motion.span>
+                            <motion.p
+                                variants={fadeUp}
+                                className="mt-4 max-w-lg text-base leading-7 text-blue-100"
+                            >
+                                Chame a WC pelo WhatsApp e agende a visita técnica. Vamos até você,
+                                avaliamos o ambiente e passamos o orçamento do início ao fim, com testes e garantia.
+                            </motion.p>
 
-                                        <motion.h2
-                                        variants={fadeUp}
-                                        className=" md:text-2xl mt-5 font-bold text-white leading-light "
-                                        >
-                                            Seu melhor amigo merece o melhor cuidado.
+                            {/* passos */}
+                            <motion.ul variants={staggerContainer} className="mt-6 space-y-3">
+                                {steps.map((step, index) => (
+                                    <motion.li key={step.title} variants={fadeUp} className="flex items-start gap-3">
+                                        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-cyan-500/15 text-cyan-300">
+                                            <step.icon size={20} weight="fill" />
+                                        </div>
+                                        <div>
+                                            <p className="text-sm font-bold text-white">
+                                                {index + 1}. {step.title}
+                                            </p>
+                                            <span className="text-sm text-blue-200">{step.text}</span>
+                                        </div>
+                                    </motion.li>
+                                ))}
+                            </motion.ul>
 
-                                        </motion.h2>
+                            {/* botão */}
+                            <motion.a
+                                variants={fadeUp}
+                                href={WHATSAPP_URL}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                whileHover={{ scale: 1.04 }}
+                                whileTap={{ scale: 0.97 }}
+                                className="mt-8 inline-flex items-center justify-center gap-2 rounded-2xl bg-whats-600 px-8 py-3 text-sm font-semibold text-white shadow-xl transition-colors hover:bg-whats-700"
+                            >
+                                <WhatsappLogoIcon size={20} weight="fill" />
+                                Agendar pelo WhatsApp
+                            </motion.a>
 
-                                        <motion.p
-                                        variants={fadeUp}
-                                        className="text-emerald-50 mt-3 leading-8 text-2xl max-w-xl"
-                                        >
-                                            Nossa equipe está pronta para receber você e seu pet
-                                            com atendimento humanizado,
-                                            estrutura moderna
-                                            e profissionais apaixonados pelo bem-estar animal.
+                            {/* contatos */}
+                            <motion.ul variants={fadeUp} className="mt-6 space-y-2">
+                                {contacts.map((contact) => (
+                                    <li key={contact.label} className="flex items-center gap-2 text-sm text-blue-100">
+                                        <contact.icon size={18} weight="fill" className="text-cyan-300" />
+                                        {contact.href ? (
+                                            <a href={contact.href} className="transition-colors hover:text-white">
+                                                {contact.label}
+                                            </a>
+                                        ) : (
+                                            <span>{contact.label}</span>
+                                        )}
+                                    </li>
+                                ))}
+                            </motion.ul>
+                        </div>
 
-                                        </motion.p>
-
-                                        <motion.a
-                                        variants={fadeUp}
-                                        href="https://wa.me/55SEUNUMERO"
-                                        target="_blank"
-                                        whileHover={{scale:1.04}}
-                                        whileTap={{scale:0.97}}
-                                        className="inline-flex mt-10 items-center justify-center gap-3 bg-white text-emerald-700 font-semibold px-10 py-4 rounded-2xl shadow-xl transition-all"
-                                        >
-                                            <WhatsappLogoIcon className='w-5 h-5' />
-                                            Agendar pelo WhatsApp
-
-                                        </motion.a>
-
-              
-                            </div>  
-                    {/* MAPA */}
-
-                    <motion.div
-                    variants={fadeUp}
-                    >
-                        <MapCard/>
-                    </motion.div>
-                 </div>
-
-            </motion.div>
-
-        </div>
-
-    </section>
+                        {/* MAPA */}
+                        <motion.div variants={fadeUp}>
+                            <MapCard />
+                        </motion.div>
+                    </div>
+                </motion.div>
+            </div>
+        </section>
     )
 }
