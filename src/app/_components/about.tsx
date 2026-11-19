@@ -72,7 +72,7 @@ export function About() {
                             </p>
                             <p>
                                 Atendemos residências, comércios, empresas, hospitais e
-                                laboratórios em Valença e região, com testes e garantia em
+                                laboratórios na cidade de Valença e região, com testes e garantia em
                                 todas as etapas do serviço.
                             </p>
                         </div>

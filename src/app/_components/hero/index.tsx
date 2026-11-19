@@ -51,7 +51,7 @@ export function Hero() {
 
                                         <p className="mt-5 max-w-xl text-base leading-7 text-slate-600 lg:text-lg">
                                                 Instalação, manutenção e higienização de ar-condicionado para residências,
-                                                comércios e empresas em Valença e região. Do planejamento à entrega,
+                                                comércios e empresas na cidade de Valença e região. Do planejamento à entrega,
                                                 com qualidade, testes e garantia.
                                         </p>
 

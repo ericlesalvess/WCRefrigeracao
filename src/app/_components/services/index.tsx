@@ -38,7 +38,7 @@ export function Services() {
 
                     <motion.p variants={fadeUp} className="mx-auto mt-3 max-w-xl text-base space-y-5 leading-7 text-slate-600">
                         Da instalação à manutenção, passando por projeto, infraestrutura e higienização.
-                        Atendemos residências, comércios e empresas em Valença e região, com padrão técnico e garantia.
+                        Atendemos residências, comércios e empresas na cidade de Valença e região, com padrão técnico e garantia.
                     </motion.p>
                 </motion.div>
 
