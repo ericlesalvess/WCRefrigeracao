@@ -5,9 +5,9 @@ export function JsonLd() {
         name: "WC Refrigeração e Climatização",
         description:
             "Instalação, manutenção e higienização de ar-condicionado para residências, comércios, empresas, hospitais e laboratórios.",
-        url: "https://SEU-DOMINIO.com.br",
+        url: "https://wcrefrigeracao.com.br",
         telephone: "+5524992764964",
-        image: "https://SEU-DOMINIO.com.br/og-image.jpg",
+        image: "https://wcrefrigeracao.com.br/og-image.jpg",
         areaServed: [
             { "@type": "City", name: "Valença" },
             { "@type": "AdministrativeArea", name: "Região de Valença, RJ" },
